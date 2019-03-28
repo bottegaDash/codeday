@@ -35,3 +35,9 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
+gem 'bootstrap', '~> 4.1', '>= 4.1.3'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+gem 'administrate', '~> 0.11.0'
+gem 'bourbon'
