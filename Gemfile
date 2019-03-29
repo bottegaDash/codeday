@@ -15,9 +15,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  gem 'byebug'
-  gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
-  gem 'database_cleaner'
+    gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+    gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+    gem 'capybara', '~> 3.2'
+    gem 'database_cleaner', '~> 1.7'
+    gem 'factory_bot_rails'
 end
 
 group :development do
@@ -28,7 +30,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end
