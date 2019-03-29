@@ -4,7 +4,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+
+    if current_user.try(:type) == 'AdminUser'
+      @posts = Post.all
+    else
+      @posts = Post.user_posts(current_user)
+    end
   end
 
   # GET /posts/1

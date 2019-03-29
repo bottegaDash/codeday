@@ -7,6 +7,16 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="container">
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <% if current_user %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'navbar-brand' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
