@@ -5,5 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: "admintest@test.com", password: "asdfasdf", password_confirmation: "asdfasdf")
 User.create(email: "test@test.com", password: "asdfasdf",password_confirmation: "asdfasdf")
+User.create(email: "test1@test.com", password: "asdfasdf",password_confirmation: "asdfasdf")
+Company.create(name: "Company A")
+CompanyProject.create!(project: "project A", company_id: Company.first.id)
+Task.create(description: "asdfasdf", company_project_id: Company.first.id)
+TaskWork.create(time_worked: DateTime.now, user_id: User.first.id, task_id: Task.last.id)
+TaskWork.create(time_worked: DateTime.now, user_id: User.last.id, task_id: Task.last.id)

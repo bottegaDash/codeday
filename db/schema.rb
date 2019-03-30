@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_03_29_171013) do
 
   create_table "task_works", force: :cascade do |t|
     t.datetime "time_worked"
+    t.integer "time_count"
     t.bigint "user_id"
     t.bigint "task_id"
     t.datetime "created_at", null: false

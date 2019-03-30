@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Project</th>
+      <th>Taks Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= Company.get_company(CompanyProject.get_project(task)).name %></td>
+        <td><%= CompanyProject.get_project(task).project %></td>
+        <td><%= task.description %><td>
+        <td><%= link_to 'Show', task %></td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tasks', new_task_path %>
