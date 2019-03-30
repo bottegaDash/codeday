@@ -8,6 +8,7 @@ class TaskWorksController < ApplicationController
       if @details.save
         format.html { redirect_to @details, notice: 'time worked was successfully created.' }
         format.json { render :show, status: :created, location: @post }
+        redirect_to root_path
       else
         format.html { render :new }
         format.json { render json: @details.errors, status: :unprocessable_entity }
