@@ -1,0 +1,9 @@
+
+<%=form_for(@details) do|f|%>
+
+   <%=f.label :time_count, "Date" %>
+   <%=f.number_field :time_count %>
+
+
+   <%=f.submit "Submit time worked" %>
+<% end %>

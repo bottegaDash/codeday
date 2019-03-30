@@ -3,20 +3,26 @@
 <table>
   <thead>
     <tr>
-      <th>time worked</th>
-      <th>time count</th
+      <th>time started</th>
+      <th>time ended</th
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
      <% @task_det.each do |det| %>
        <tr>
-         <td><%=  det.time_worked %></td>
+         <td><%=  det.time_worked.strftime("%H:%M %-m/%-d/%y") %></td>
+         <td></td>
          <% if det.time_count.nil?%>
-          <td><%= link_to 'Update', edit_task_work_path(det) %></td>
+          <td><%= link_to 'End task time', edit_task_work_path(det) %></td>
          <% else %>
           <td><%= det.time_count%></td>
         <% end%>
+        <% if det.time_count.nil?%>
+         <td><%= link_to 'Forgot to end', update_time_task_work_path(det) %></td>
+        <% end %>
        </tr>
      <% end %>
    </tbody>

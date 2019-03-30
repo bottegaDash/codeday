@@ -12,6 +12,13 @@ class ApplicationController < ActionController::Base
     minutes
   end
 
+  def round_minutes minutes, round_by
+    if minutes % round_by > 0
+      minutes = ((minutes)/round_by)*round_by+round_by
+    end
+    minutes
+  end
+
   def user_not_authorized
     flash[:alert] = "You are not authorized to perform this action."
     redirect_to(root_path)

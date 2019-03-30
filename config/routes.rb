@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   resources :posts
   resources :tasks
   resources :task_works
+  resources :task_works do
+    member do
+      get 'update_time'
+    end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
